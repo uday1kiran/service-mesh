@@ -1,0 +1,22 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: nodeserver
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - node-gateway
+  http:
+  - match:
+    - uri:
+        exact: /
+    - uri:
+        exact: /sample1
+    - uri:
+        exact: /sample2
+    route:
+    - destination:
+        host: node-service
+        port:
+          number: 8080
