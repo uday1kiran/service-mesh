@@ -12,9 +12,9 @@ spec:
         - uri:
             exact: /
         - uri:
-            prefix: /admin
+            exact: /admin
         - uri:
-            prefix: /login
+            exact: /login
       route:
         - destination:
             host: node-service
