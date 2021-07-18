@@ -50,4 +50,12 @@ spec:
               name: nodeapp-port
           #securityContext:
           #runAsUser: 1000
+          volumeMounts:
+          - name: config-volume
+            mountPath: /home/app/webapp/todowoo/.env
+            subPath: .env
+      volumes:
+        - name: config-volume
+          configMap:
+            name: database-config #postgres
 
